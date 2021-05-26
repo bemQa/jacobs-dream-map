@@ -246,7 +246,7 @@ function collage(settings, callback) {
 	}
 
 	const addPhoto = (item) => {
-		const photo = new Image(item.width, item.height);
+		const photo = new Image(item.naturalWidth, item.naturalHeight);
 		const borderImg = item.parentElement.parentElement.querySelector('.collage-avatar__border');
 		const border = new Image(borderImg.width, borderImg.height);
 		const pinImg = item.parentElement.parentElement.querySelector('.collage-avatar__pin');
