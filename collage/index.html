@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>demo</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/konva/7.2.5/konva.min.js"></script>
+</head>
+
+<body>
+	<div class="collage">
+		<div class="collage-hidden">
+			<img src="img/trash.svg" class="collage-hidden__trash">
+			<img src="img/6CbzmM-CLzU.jpg">
+		</div>
+		<div class="collage-inner">
+			<div class="collage__items"></div>
+			<div class="cavnas-here collage__canvas-holder">
+				<canvas></canvas>
+			</div>
+			<div class="collage__items"></div>
+			<div class="collage__mobile-items collage-mobile-items">
+				<div class="collage-mobile-items__desc">
+					Просто нажимай на стикеры,<br>
+					и они появятся на твоей Карте Мечты
+				</div>
+				<div class="collage-mobile-items__inner">
+
+				</div>
+				<button class="collage-mobile-items__close">закрыть</button>
+			</div>
+		</div>
+	</div>
+	<button id="clear">clear canvas</button>
+	<button id="screenshot">screenshot canvas</button>
+	<button id='curtain'>show curtain</button>
+
+
+	<script src="collage.js"></script>
+	<script>
+		const allImages = [
+			{
+				src: 'img/ava-border.png',
+				srcPin: 'img/ava-pin.png',
+				id: 12,
+				type: 'avatar',
+			},
+			{
+				src: 'img/ava-border.png',
+				srcPin: 'img/ava-pin.png',
+				id: 11,
+				type: 'avatar',
+			},
+			{
+				src: 'img/1.png',
+				id: 1,
+			},
+			{
+				src: 'img/2.png',
+				id: 2,
+			},
+			{
+				src: 'img/3.png',
+				id: 3,
+			},
+			{
+				src: 'img/4.png',
+				id: 4,
+			},
+			{
+				src: 'img/5.png',
+				id: 5,
+			},
+			{
+				src: 'img/6.png',
+				id: 6,
+			},
+			{
+				src: 'img/7.png',
+				id: 7,
+			},
+			{
+				src: 'img/8.png',
+				id: 8,
+			},
+		]
+		const imagesLeft = allImages.slice(0, 4);
+		const imagesRight = allImages.slice(4, 8);
+
+		document.addEventListener('DOMContentLoaded', () => {
+			if (window.innerWidth <= 1024) {
+				let collageMobile = collage({
+					images: allImages,
+					isMobile: true,
+					canvasWrapper: document.querySelector('.cavnas-here'),
+					itemsContainers: [{
+							element: document.querySelectorAll('.collage-mobile-items__inner')[0],
+							images: allImages
+						},
+					],
+					canvasBG: 'img/bg.png',
+				});
+
+				clear.addEventListener('click', function (e) {
+					collageMobile.reset();
+				})
+
+				screenshot.addEventListener('click', function (e) {
+					collageMobile.makeScreenshot((screenshotBase64) => {
+						// place AJAX here to send on server screenshotBase64
+					});
+				})
+				
+				let curtainClass = document.querySelector('.collage-mobile-items').classList
+				curtain.addEventListener('click', function (e) {
+					curtainClass.add('active');
+				})
+
+				document.querySelector('.collage-mobile-items__inner').addEventListener('click', function(e){
+					let curClassList = e.target.classList
+					let curElem = e.target.closest('.collage-item');
+					if(curElem){
+						if(curElem.classList.contains('collage-avatar') && (!curElem.classList.contains('has-photo'))){
+							return
+						}
+						curtainClass.remove('active');
+					}
+				})
+
+				document.querySelector('.collage-mobile-items__close').addEventListener('click', function(e){
+					curtainClass.remove('active');
+				})
+			} else {
+				let collageDesktop = collage({
+					images: allImages,
+					canvasWrapper: document.querySelector('.cavnas-here'),
+					itemsContainers: [{
+							element: document.querySelectorAll('.collage__items')[0],
+							images: imagesLeft
+						},
+						{
+							element: document.querySelectorAll('.collage__items')[1],
+							images: imagesRight
+						},
+					],
+					canvasBG: 'img/bg.png',
+				});
+
+				clear.addEventListener('click', function (e) {
+					collageDesktop.reset();
+				})
+
+				screenshot.addEventListener('click', function (e) {
+					collageDesktop.makeScreenshot();
+				})
+			}
+
+
+		});
+	</script>
+</body>
+
+</html>
