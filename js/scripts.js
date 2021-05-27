@@ -199,45 +199,34 @@ $(document).ready(function () {
         swipe: false
     });
 
-    if($(window).innerWidth() >= 1000) {
-        $('.product').mousemove(function(e) {
-            e.preventDefault();
-            $(this).removeClass('blur');
-            $(this).siblings().addClass('blur');
+    function test() {
+        let question_number = $('.test-question-wrapper.active').data('question');
+
+        $('.question-field').find('input[type="radio"]').on('click', function() {
+            testBtnCheck();
         });
 
-        $('.product').mouseout(function(e) {
-            e.preventDefault();
-            $('.product').removeClass('blur');
-        });
-    } else {
-        $('.product-link').click(function(e) {
-            e.preventDefault();
-            $('.tooltip').removeClass('active');
-            $(this).next().addClass('active');
-        });
+        $('.test-btn').on('click', function() {
+            $('.test-question-title[data-question="'+ question_number +'"]').removeClass('active');
+            $('.test-question-wrapper[data-question="'+ question_number +'"]').removeClass('active');
+            question_number = question_number+1;
+            $(this).addClass('disabled');
+            $('.test-question-title[data-question="'+ question_number +'"]').addClass('active');
+            $('.test-question-wrapper[data-question="'+ question_number +'"]').addClass('active');
 
-        $('.close-tooltip').click(function(e) {
-            e.preventDefault();
-            $(this).parent().removeClass('active');
+            if(question_number > 5) {
+                let result_number = 3;
+                $('.test-form').hide();
+                $('.test-result[data-result="'+ result_number +'"]').addClass('active');
+            }
         });
     }
 
-    function parallaxIt(e, target, movement, container) {
-        var $this = container;
-        var relX = e.pageX - $this.offset().left;
-        var relY = e.pageY - $this.offset().top;
+    test();
 
-        TweenMax.to(target, 1, {
-            x: (relX - $this.width() / 2) / $this.width() * movement,
-            y: (relY - $this.height() / 2) / $this.height() * movement
-        });
-    }
-
-    if($(".main-page").length && window.innerWidth < 1000) {
-        $(".main-page").mousemove(function(e) {
-            var $this = $(this);
-            parallaxIt(e, ".main-decor", -15, $this);
-        });
+    function testBtnCheck() {
+        if($('.question-field').find('input[type="radio"]').is(':checked')) {
+            $('.test-btn').removeClass('disabled');
+        }
     }
 });

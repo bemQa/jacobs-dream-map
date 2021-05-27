@@ -110,6 +110,7 @@
 				screenshot.addEventListener('click', function (e) {
 					collageMobile.makeScreenshot((screenshotBase64) => {
 						// place AJAX here to send on server screenshotBase64
+						console.log(screenshotBase64);
 					});
 				})
 				
@@ -153,7 +154,10 @@
 				})
 
 				screenshot.addEventListener('click', function (e) {
-					collageDesktop.makeScreenshot();
+					collageDesktop.makeScreenshot((screenshotBase64) => {
+						// place AJAX here to send on server screenshotBase64
+						console.log(screenshotBase64);
+					});
 				})
 
 				

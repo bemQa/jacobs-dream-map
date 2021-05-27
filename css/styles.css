@@ -1037,7 +1037,13 @@ footer::before {
 
 .checkbox input:checked + .checkmark {
     background: linear-gradient(90deg, #B58840 -6.52%, #F2E996 52.31%, #B58840 124.17%);
-    border: 2px solid transparent;
+    border: 2px solid #D4B464;
+}
+
+.feedback-form  .checkbox input:checked + .checkmark,
+.question-field  .checkbox input:checked + .checkmark {
+    background: none;
+    border: 2px solid #D4B464;
 }
 
 .checkbox input:checked + .checkmark::after {
@@ -1054,7 +1060,8 @@ footer::before {
     border-radius: 13px;
 }
 
-.feedback-form .checkbox input:checked + .checkmark::after {
+.feedback-form .checkbox input:checked + .checkmark::after,
+.question-field .checkbox input:checked + .checkmark::after {
     bottom: 2px;
     background: url(../img/check1.svg) center no-repeat;
     border-radius: 13px;
@@ -1182,10 +1189,15 @@ span.error {
     opacity: .9;
 }
 
-.popup .btn {
+.popup .btn,
+.test-page .btn {
     width: 215px;
     height: 55px;
     padding: 22px 10px 21px;
+}
+
+.test-page .result-btn {
+    width: 240px;
 }
 
 .check-btn {
@@ -1355,23 +1367,20 @@ span.error {
     height: 670px;
     background: url(../img/inner-decor.png) center no-repeat;
     background-size: cover;
-    z-index: 1;
+    z-index: 0;
 }
 
 .page-title {
+    position: relative;
     font-weight: 500;
     font-size: 35px;
     line-height: 50px;
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.5));
     background: linear-gradient(90deg, #B58840 -6.52%, #F2E996 52.31%, #B58840 124.17%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.faq-page .container {
-    z-index: 2;
 }
 
 .faq-container {
@@ -1464,6 +1473,92 @@ span.error {
     max-width: 410px;
     width: 100%;
     margin: auto;
+}
+
+.test-form {
+    margin: 30px auto 50px;
+}
+
+.test-question-title {
+    display: none;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.5));
+    background: linear-gradient(180deg, #FFFFFF 0%, #C2C2C2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.test-question-title.active {
+    display: block;
+}
+
+.test-question-wrapper {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 650px;
+    width: 100%;
+    margin: 55px auto 50px;
+}
+
+.test-question-wrapper.active {
+    display: flex;
+}
+
+.question-field {
+    max-width: 300px;
+}
+
+.question-field .checkmark,
+.question-field .checkbox-text {
+    opacity: .5;
+}
+
+.question-field .checkbox input:checked + .checkmark,
+.question-field .checkbox input:checked ~ .checkbox-text {
+    opacity: 1;
+}
+
+.question-field .checkbox input:checked + .checkmark {
+
+}
+
+.question-field .checkbox-text {
+    max-width: 256px;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.test-result {
+    display: none;
+    margin: 30px auto 50px;
+}
+
+.test-result.active {
+    display: block;
+}
+
+.test-question-text {
+    max-width: 555px;
+    width: 100%;
+    margin: 40px auto;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.result-img {
+    position: absolute;
+    top: 240px;
+    right: 5%;
 }
 
 .profile-contacts {
@@ -2808,13 +2903,17 @@ table td:nth-child(3) {
     }
 
     .inner-page {
+        min-height: auto;
         padding-bottom: 30px;
     }
 
     .inner-page::before {
-        top: -114px;
+        left: -500px;
+        right: -500px;
         width: 614px;
         height: 614px;
+        background: rgba(28, 131, 38, 0.3);
+        filter: blur(60px);
     }
 
     .inner-decor {
@@ -2860,6 +2959,46 @@ table td:nth-child(3) {
 
     .feedback-form {
         max-width: 290px;
+    }
+
+    .test-form,
+    .test-result {
+        margin: 20px auto 0;
+    }
+
+    .test-question-title {
+        font-size: 30px;
+    }
+
+    .test-question-wrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        max-width: 300px;
+        margin: 40px auto;
+    }
+
+    .question-field .checkbox-text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .test-question-text {
+        max-width: 272px;
+        margin: 20px auto 40px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .result-img {
+        position: relative;
+        display: flex;
+        -ms-align-items: center;
+        align-items: center;
+        justify-content: center;
+        top: auto;
+        right: auto;
+        margin: 20px auto;
     }
 
     .profile-block {
