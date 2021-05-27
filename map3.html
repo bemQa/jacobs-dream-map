@@ -46,7 +46,7 @@
 			<section class="collage-page">
 				<div class="collage-title">Создай свою карту мечты</div>
 				<div class="collage-text">Просто нажимай на стикеры, и они появятся на твоей Карте Мечты</div>
-				<div class="collage">
+				<div class="collage collage3">
 					<div class="collage-hidden">
 						<img src="collage/img/trash.svg" class="collage-hidden__trash">
 					</div>
@@ -80,50 +80,90 @@
 						{
 							src: 'collage/img/ava-border.png',
 							srcPin: 'collage/img/ava-pin.png',
-							id: 12,
+							id: 20,
 							type: 'avatar',
 						},
 						{
 							src: 'collage/img/ava-border.png',
 							srcPin: 'collage/img/ava-pin.png',
-							id: 11,
+							id: 19,
 							type: 'avatar',
 						},
 						{
-							src: 'collage/img/1.png',
+							src: 'collage/img/default/1.png',
 							id: 1,
 						},
 						{
-							src: 'collage/img/2.png',
+							src: 'collage/img/3/2.png',
 							id: 2,
 						},
 						{
-							src: 'collage/img/3.png',
+							src: 'collage/img/default/3.png',
 							id: 3,
 						},
 						{
-							src: 'collage/img/4.png',
+							src: 'collage/img/default/4.png',
 							id: 4,
 						},
 						{
-							src: 'collage/img/5.png',
+							src: 'collage/img/default/5.png',
 							id: 5,
 						},
 						{
-							src: 'collage/img/6.png',
+							src: 'collage/img/3/6.png',
 							id: 6,
 						},
 						{
-							src: 'collage/img/7.png',
+							src: 'collage/img/3/7.png',
 							id: 7,
 						},
 						{
-							src: 'collage/img/8.png',
+							src: 'collage/img/default/8.png',
 							id: 8,
 						},
+						{
+							src: 'collage/img/default/9.png',
+							id: 9,
+						},
+						{
+							src: 'collage/img/default/10.png',
+							id: 10,
+						},
+						{
+							src: 'collage/img/3/11.png',
+							id: 11,
+						},
+						{
+							src: 'collage/img/3/12.png',
+							id: 12,
+						},
+						{
+							src: 'collage/img/3/13.png',
+							id: 13,
+						},
+						{
+							src: 'collage/img/3/14.png',
+							id: 14,
+						},
+						{
+							src: 'collage/img/3/15.png',
+							id: 15,
+						},
+						{
+							src: 'collage/img/3/16.png',
+							id: 16,
+						},
+						{
+							src: 'collage/img/3/17.png',
+							id: 17,
+						},
+						{
+							src: 'collage/img/3/18.png',
+							id: 18,
+						},
 					]
-					const imagesLeft = allImages.slice(0, 4);
-					const imagesRight = allImages.slice(4, 8);
+					const imagesLeft = allImages.slice(0, 12);
+					const imagesRight = allImages.slice(12, 20);
 
 					document.addEventListener('DOMContentLoaded', () => {
 						if (window.innerWidth <= 1000) {
@@ -136,7 +176,7 @@
 										images: allImages
 									},
 								],
-								canvasBG: 'collage/img/bg.png',
+								canvasBG: 'collage/img/bg3.jpg',
 							});
 
 							clear.addEventListener('click', function (e) {
@@ -149,6 +189,10 @@
 									console.log(screenshotBase64);
 								});
 							})
+
+							if(collageMobile.layer.find('.photo').length > 0){
+								// photo exist on canvas
+							}
 							
 							let curtainClass = document.querySelector('.collage-mobile-items').classList
 							curtain.addEventListener('click', function (e) {
@@ -182,7 +226,7 @@
 										images: imagesRight
 									},
 								],
-								canvasBG: 'collage/img/bg.png',
+								canvasBG: 'collage/img/bg3.jpg',
 							});
 
 							clear.addEventListener('click', function (e) {

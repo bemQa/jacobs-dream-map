@@ -18,9 +18,9 @@ body {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    -ms-align-items: center;
+    align-items: center;
     align-content: flex-start;
-
     padding: 20rem;
 }
 
@@ -151,7 +151,7 @@ height: 100%; */
 
 .collage-mobile-items {
     display: none;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background-color: rgba(0, 0, 0, .9);
     color: white;
@@ -275,6 +275,7 @@ height: 100%; */
         display: flex;
         opacity: 1;
         pointer-events: all;
+        z-index: 99;
     }
 
     #curtain {
