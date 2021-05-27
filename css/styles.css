@@ -1189,6 +1189,11 @@ span.error {
     opacity: .9;
 }
 
+.btn-green {
+    background: #1E402C;
+    color: #fff;
+}
+
 .popup .btn,
 .test-page .btn {
     width: 215px;
@@ -1198,6 +1203,12 @@ span.error {
 
 .test-page .result-btn {
     width: 240px;
+}
+
+.collage-btn {
+    width: 180px;
+    margin: 10px;
+    padding: 14px 10px 13px;
 }
 
 .check-btn {
@@ -1560,6 +1571,49 @@ span.error {
     top: 240px;
     right: 5%;
 }
+
+header ~ .collage-page {
+    padding-top: 100px;
+}
+
+.collage-page {
+    position: relative;
+    padding: 0 0 30px;
+    background-color: #F8F6EE;
+}
+
+.collage-title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #D4B464;
+}
+
+.collage-text {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+}
+
+.collage {
+    margin: 20px auto;
+}
+
+.collage-btns {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
 
 .profile-contacts {
     display: flex;
@@ -2999,6 +3053,13 @@ table td:nth-child(3) {
         top: auto;
         right: auto;
         margin: 20px auto;
+    }
+
+    .collage-btns {
+        flex-direction: column;
+        justify-content: center;
+        -ms-align-items: center;
+        align-items: center;
     }
 
     .profile-block {
