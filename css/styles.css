@@ -1698,6 +1698,22 @@ header ~ .collage-page {
     height: 90px;
 }
 
+.map-popup .popup__wrap {
+    max-width: 330px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 25px 10px;
+}
+
+.map-popup-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #17351D;
+    margin-bottom: 20px;
+}
 
 
 .profile-contacts {
