@@ -254,6 +254,7 @@ function collage(settings, callback) {
 
 		border.src = borderImg.src;
 		photo.src = item.src;
+		pin.src = pinImg.src;
 		const group = new Konva.Group({
 			name: 'item photo',
 			x: canvas.width / 2 - (item.width / 2),
@@ -283,9 +284,6 @@ function collage(settings, callback) {
 				res(group);
 			}
 		}).then((r) => {
-			console.log(item);
-			console.log(item.parentElement.width);
-			console.log(item.height);
 			return new Promise((res, rej) => {
 				console.log('photo-img');
 
@@ -297,12 +295,7 @@ function collage(settings, callback) {
 					y: rem(9),
 					width: rem(139),
 					height: rem(129),
-					// scaleX: 0.17,
-					// scaleY: 0.12,
 				});
-				// const aspectRatio = photoImg.width() / photoImg.height();
-				// photoImg.scaleX(cw / photoImg.width());
-				// photoImg.scaleY(ch / photoImg.height());
 				let sImg = photoImg.image();
 
 				console.log(sImg);
@@ -313,9 +306,7 @@ function collage(settings, callback) {
 				);
 
 				photoImg.setAttrs(newCrop);
-				// console.log(item);
-				// console.log(newCrop);
-				// console.log(photoImg);
+
 				group.add(photoImg);
 				res(r)
 			})
@@ -330,17 +321,18 @@ function collage(settings, callback) {
 					x: (r.find('.photo-bg')[0].width() / 2) - pin.width / 2,
 					y: rem(-30),
 				});
+				console.log(pin);
+				console.log('pin');
 
 				group.add(pinImg);
+				layer.batchDraw();
 				res(r)
-				layer.draw();
 			})
 		}).then((r) => {
-			layer.draw();
 			r.width(r.getClientRect().width)
 			r.height(r.getClientRect().height)
 		})
-
+		
 	}
 
 	const placeImageToAvatar = (e) => {
@@ -351,8 +343,7 @@ function collage(settings, callback) {
 				if (!(file.type == 'image/png' || file.type == 'image/jpeg')) {
 					return console.error('file extention must be .png or .jpg');
 				}
-
-				console.log(file);
+				
 				downscale(file, 500, 500, {returnBlob: 1}).then((b64) => { // b64 also blob
 					e.target.parentElement.querySelector('.collage-avatar-userpic__img').src = URL.createObjectURL(b64);
 					e.target.parentNode.classList.add('has-photo')
@@ -460,11 +451,36 @@ function collage(settings, callback) {
 	}
 
 	function makeScreenshot(callback) {
-		transformer.visible(false)
-		var dataURL = stage.toDataURL();
-		transformer.visible(true);
+		function downloadURI(uri, name) {
+			var link = document.createElement('a');
+			link.download = name;
+			link.href = uri;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+			delete link;
+		}
+		
+		function adjustScale(curSize, reqSize){
+			const scale = reqSize / curSize
+			return scale
+		}
+		
 		toggleTrash('hide');
+		transformer.visible(false)
 
+		const screenShotSize = 1000; //px
+		stage.width(screenShotSize);
+		stage.height(screenShotSize);
+		stage.scale({x: adjustScale(canvas.width, screenShotSize), y: adjustScale(canvas.width, screenShotSize)});
+		var dataURL = stage.toDataURL();
+		// downloadURI(dataURL, `collage-${makeid(5)}.png`);
+		
+		transformer.visible(true);
+		stage.scale({x: 1, y: 1});
+		stage.width(canvas.width);
+		stage.height(canvas.height);
+		
 		if (callback) {
 			callback(dataURL);
 		}

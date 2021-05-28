@@ -189,6 +189,15 @@ $(document).ready(function () {
     }
     openAccordion();
 
+    $('.tab-trigger').click(function(){
+        $('.tab-trigger').removeClass('active');
+        var tab = $(this).data('tab');
+        $('.tab').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-item').removeClass('active');
+        $('.tab-item.' + tab).addClass('active');
+    });
+
     $('.lk-prizes-slider').slick({
         dots: false,
         arrows: true,

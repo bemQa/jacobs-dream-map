@@ -1716,41 +1716,43 @@ header ~ .collage-page {
 }
 
 
-.profile-contacts {
+
+.profile-info {
+    position: absolute;
+    top: 10px;
+    right: 15px;
     display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.profile-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #B58840 -6.52%, #F2E996 52.31%, #B58840 124.17%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-name span {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
 }
 
 .profile-contact {
     position: relative;
     padding-left: 25px;
+    font-weight: 500;
     font-size: 12px;
     line-height: 1;
     color: #fff;
-}
-
-.profile-contact-wrapper {
-    display: flex;
     margin-bottom: 15px;
-}
-
-.profile-mail {
-    margin-right: 30px;
-}
-
-.profile-mail::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 16px;
-    height: 13px;
-    margin: auto;
-    background: url(../img/mail.svg) center no-repeat;
-    background-size: contain;
 }
 
 .profile-phone::before {
@@ -1766,88 +1768,70 @@ header ~ .collage-page {
     background-size: contain;
 }
 
-.profile-name-wrapper {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.profile-name-wrapper:last-child {
-    margin-bottom: 0;
-}
-
-.profile-name {
-    max-width: 500px;
-    width: 100%;
-	min-height: 36px;
-    font-size: 14px;
-    line-height: 18px;
-    text-align: center;
-    color: #FFDD67;
-    margin: 0 auto;
-}
-
-.profile-name span {
-    display: block;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 18px;
-    text-transform: uppercase;
-}
-
-.profile-link-wrapper {
-    text-align: center;
-}
-
 .logout-link {
     font-size: 12px;
     line-height: 1;
-    text-align: center;
     color: #fff;
 }
 
-.reg-card-block {
-    position: absolute;
-    top: 117px;
-    right: 15px;
+.tabs {
     display: flex;
-    flex-direction: column;
-    min-height: 48px;
-    padding-left: 80px;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto 20px;
 }
 
-.reg-cards-title {
-    font-weight: bold;
-    font-size: 16px;
+.tab {
+    position: relative;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 1;
+    text-align: center;
     text-transform: uppercase;
-    color: #FFDD67;
-    margin-bottom: 5px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 190px;
+    height: 30px;
+    margin: 0 5px;
+    padding: 6px 11px 5px;
+    background: transparent;
+    border: 1px solid #D4B464;
+    border-radius: 5px;
+    transition: all .2s linear;
+    cursor: pointer;
 }
 
-.reg-card-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 66px;
-    height: 48px;
-    margin: auto;
-    background: url(../img/card.png) center no-repeat;
-    background-size: contain;
+.tab:not(.active):hover,
+.tab.active {
+    background: linear-gradient(100.51deg, #B28D3C 10.08%, #E6C55E 50.03%, #B28D3C 84.55%);
+    border: 1px solid transparent;
 }
 
-.reg-card-name {
-    font-size: 12px;
-    line-height: 16px;
-    color: #fff;
+.tab.disabled {
+    pointer-events: none;
+    background: #C2C2C2;
+    color: #000;
 }
 
-.popup-prize-img {
-    max-width: 200px;
-    width: 100%;
-    margin: 0 auto 20px;
+.tabs-content {
+    min-height: 450rem;
 }
+
+.tab-item {
+    display: none;
+}
+
+.tab-item.active {
+    display: block;
+}
+
+
+
 
 .lk-wrapper {
     display: flex;
