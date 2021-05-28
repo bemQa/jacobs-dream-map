@@ -1211,6 +1211,11 @@ span.error {
     padding: 14px 10px 13px;
 }
 
+.lk-page .btn {
+    height: 55px;
+    padding: 22px 40px 21px;
+}
+
 .check-btn {
     width: 180px;
     height: 30px;
@@ -1819,7 +1824,7 @@ header ~ .collage-page {
 }
 
 .tabs-content {
-    min-height: 450rem;
+    min-height: 370px;
 }
 
 .tab-item {
@@ -1830,55 +1835,89 @@ header ~ .collage-page {
     display: block;
 }
 
-
-
-
-.lk-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin: 70px auto 40px;
-}
-
-.lk-table-wrapper {
-    position: relative;
-    max-width: 500px;
+.lk-map-announce {
+    max-width: 470px;
     width: 100%;
-    height: 450px;
-    padding: 40px 30px 40px 45px;
-    background: linear-gradient(217.17deg, #FFFFFF 1.42%, #EFE492 54.82%, #CAAA5E 99.16%);
-    border-radius: 46px;
+    margin: 0 auto 20px;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
 }
 
-.lk-table-title-wrapper {
+.upload-wrap {
+    margin-bottom: 40px;
+}
+
+.dropify-wrapper {
+    max-width: 124px;
+    margin: auto;
+    background: transparent;
+    border: 1px solid #D4B464;
+}
+
+.dropify-wrapper:hover {
+    background: none;
+}
+
+.dropify-wrapper .dropify-message p {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.dropify-wrapper .dropify-clear {
+    top: 0;
+    right: 0;
+    opacity: 1;
+    background: none !important;
+    border: none;
+    width: 30px;
+    padding: 0;
+}
+
+.dropify-wrapper .dropify-preview {
+    padding: 0;
+}
+
+.dropify-wrapper:hover .dropify-preview .dropify-infos {
+    opacity: 0;
+}
+
+.my-logos {
+    display: flex;
+    flex-direction: column;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-logo {
     display: flex;
     -ms-align-items: center;
     align-items: center;
-    justify-content: space-between;
-    max-width: 420px;
-    width: 100%;
-    margin: 0 auto 30px;
+    width: 300px;
+    margin: 10px auto;
 }
 
-.lk-table-title-wrapper .title {
-    font-weight: 900;
-    font-size: 21px;
+.my-logo-img {
+    max-width: 124px;
+    width: 100%;
+    border: 1px solid #D4B464;
+    margin-right: 20px;
+    line-height: 0;
+}
+
+.my-logo-text {
+    font-size: 13px;
     line-height: 20px;
-    text-transform: uppercase;
-    color: #231F20;
+    color: #FFFFFF;
 }
 
-.lk-table-title-wrapper .btn-wrapper {
-    width: auto;
-    margin: 0;
-}
-
-.lk-table-announce {
-    max-width: 440px;
-    width: 100%;
-    margin: auto;
-    font-size: 18px;
-    line-height: 22px;
-    color: #231F20;
+.my-logo-text.rejected {
+    color: #EB5757;
 }
 
 .table-wrapper {
@@ -1930,91 +1969,7 @@ table td:nth-child(3) {
    min-width: 140px;
 }
 
-.lk-table {
-    max-width: 420px;
-    width: 100%;
-    max-height: 320px;
-    margin: auto;
-}
 
-.lk-table th {
-    color: #231F20;
-}
-
-.lk-table table td {
-    color: #231F20;
-    min-width: 120px;
-    padding: 6px 20px 6px 0;
-}
-
-.lk-table table td:nth-child(2),
-.lk-table table td:nth-child(3) {
-    font-weight: bold;
-}
-
-.lk-table table td:nth-child(3) {
-    min-width: 150px;
-}
-
-.lk-table .check-preview {
-    width: 44px;
-    height: 44px;
-}
-
-.check-preview {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    overflow: hidden;
-    border: 1px solid #989898;
-    border-radius: 50px;
-}
-
-.check-preview img {
-    border-radius: 50px;
-}
-
-.check-preview.rejected::after {
-    content: '!';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 23px;
-    height: 23px;
-    margin: auto;
-    border-radius: 50px;
-    background: #EB2316;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 1;
-    text-align: center;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.rejected-link {
-    color: #EB2316;
-}
-
-.lk-table-prizes-wrapper::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -70px;
-    right: -50px;
-    bottom: 0;
-    margin: auto;
-    width: 259px;
-    height: 280px;
-    background: url(../img/lk-prize-bg.png) center no-repeat;
-    background-size: contain;
-}
 
 .lk-prizes-slider {
     position: relative;

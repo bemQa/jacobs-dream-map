@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="fonts/stylesheet.css">
 	<link rel="stylesheet" href="libs/select2/select2.min.css">
 	<link rel="stylesheet" href="libs/scrollbar/jquery.scrollbar.css">
+	<link rel="stylesheet" href="libs/dropify/dropify.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<!--[if lte IE 9]>
     <script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script>
@@ -56,13 +57,50 @@
 					</div>
 					<div class="tabs-content">
 						<div class="tab-item tab-map active">
-							1
+							<!-- <div class="lk-map-announce">
+								Пока ты ещё не загрузил фото логотипа Jacobs. <br>Возможность создать Карту Мечты добавится после <br>загрузки логотипа и прохождения модерации. 
+							</div>
+							<div class="btn-wrapper">
+								<a href="#!" class="btn pop-op" data-popup="add-logo">Загрузить лого</a>
+							</div>
+							<div class="lk-map-announce">
+								Пока у тебя нет ни одной Карты Мечты. <br>Вдохнови других участников, создав свою Карту Мечты, поделись картой в соц.сетях и участвуй в розыгрыше главного приза
+							</div>
+							<div class="btn-wrapper">
+								<a href="test.html" class="btn">Пройти тест</a>
+							</div> -->
+
+							<!-- <img src="img/collage-example.png" alt=""> -->
 						</div>
 						<div class="tab-item tab-logo">
-							2
+							<!-- <div class="lk-map-announce">
+								Пока ты ещё не загрузил фото логотипа Jacobs. 
+							</div>
+							<div class="btn-wrapper">
+								<a href="#!" class="btn pop-op" data-popup="add-logo">Загрузить лого</a>
+							</div> -->
+							<div class="my-logos">
+								<div class="my-logo">
+									<div class="my-logo-img">
+										<img src="img/nescafe-logo-example.png" alt="">
+									</div>
+									<div class="my-logo-text rejected">Отклонено ХХ.ХХ.2021</div>
+								</div>
+								<div class="my-logo">
+									<div class="my-logo-img">
+										<img src="img/jacobs-logo-example.png" alt="">
+									</div>
+									<div class="my-logo-text">Одобрено ХХ.ХХ.2021</div>
+								</div>
+							</div>
+							<!-- <div class="lk-map-announce">
+								Что-то пошло не так. <br>Загрузи новое лого, чтобы создать свою Карту Мечты 
+							</div>
+							<div class="btn-wrapper">
+								<a href="#!" class="btn pop-op" data-popup="add-logo">Загрузить лого</a>
+							</div> -->
 						</div>
 					</div>
-					<img src="img/collage-example.png" alt="">
 				</div>
 			</section>
 		</div>
@@ -194,6 +232,25 @@
                 </div>
             </div>
 		</div>
+		<div id="add-logo" class="popup">
+			<div class="popup__wrap">
+				<a href="#!" class="close-popup js-close-popup"></a>
+                <div class="popup__inner">
+                	<div class="popup__title">Загрузка логотипа</div>
+                	<div class="popup__error"></div>
+                    <form class="popup-form">
+						<div class="upload-wrap">
+			                <div class="upload">
+			                    <input type="file" name="logo" class="dropify" data-dpf="1" data-height="80" required />
+			                </div>
+			            </div>
+	                    <div class="btn-wrapper">
+							<button class="btn">На модерацию</button>
+						</div>
+                    </form>
+                </div>
+            </div>
+		</div>
 	</div>
 
 	<script src="libs/jquery-3.5.1.min.js"></script>
@@ -203,6 +260,7 @@
 	<script src="libs/jquery.inputmask.min.js"></script>
 	<script src="libs/jquery.countdown.min.js"></script>
 	<script src="libs/slick.min.js"></script>
+	<script src="libs/dropify/dropify.min.js"></script>
 	<script src="js/scripts.js"></script>
 </body>
 </html>
