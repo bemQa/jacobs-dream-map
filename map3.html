@@ -51,11 +51,22 @@
 						<img src="collage/img/trash.svg" class="collage-hidden__trash">
 					</div>
 					<div class="collage-inner">
-						<div class="collage__items"></div>
+						<div class="collage__items">
+							<div class="collage__items-raw collage__items-raw1"></div>
+							<div class="collage__items-raw collage__items-raw2"></div>
+							<div class="collage__items-raw collage__items-raw3"></div>
+							<div class="collage__items-raw collage__items-raw4"></div>
+							<div class="collage__items-raw collage__items-raw5"></div>
+						</div>
 						<div class="cavnas-here collage__canvas-holder">
 							<canvas></canvas>
 						</div>
-						<div class="collage__items"></div>
+						<div class="collage__items">
+							<div class="collage__items-raw collage__items-raw6"></div>
+							<div class="collage__items-raw collage__items-raw7"></div>
+							<div class="collage__items-raw collage__items-raw8"></div>
+							<div class="collage__items-raw collage__items-raw9"></div>
+						</div>
 						<div class="collage__mobile-items collage-mobile-items">
 							<div class="collage-mobile-items__desc">
 								Просто нажимай на стикеры,<br>
@@ -162,8 +173,15 @@
 							id: 18,
 						},
 					]
-					const imagesLeft = allImages.slice(0, 12);
-					const imagesRight = allImages.slice(12, 20);
+					const imagesLeft1 = allImages.slice(0, 2);
+					const imagesLeft2 = allImages.slice(2, 3);
+					const imagesLeft3 = allImages.slice(3, 6);
+					const imagesLeft4 = allImages.slice(6, 9);
+					const imagesLeft5 = allImages.slice(9, 12);
+					const imagesRight6 = allImages.slice(12, 14);
+					const imagesRight7 = allImages.slice(14, 16);
+					const imagesRight8 = allImages.slice(16, 17);
+					const imagesRight9 = allImages.slice(17, 20);
 
 					document.addEventListener('DOMContentLoaded', () => {
 						if (window.innerWidth <= 1000) {
@@ -218,12 +236,40 @@
 								images: allImages,
 								canvasWrapper: document.querySelector('.cavnas-here'),
 								itemsContainers: [{
-										element: document.querySelectorAll('.collage__items')[0],
-										images: imagesLeft
+										element: document.querySelector('.collage__items-raw1'),
+										images: imagesLeft1
 									},
 									{
-										element: document.querySelectorAll('.collage__items')[1],
-										images: imagesRight
+										element: document.querySelector('.collage__items-raw2'),
+										images: imagesLeft2
+									},
+									{
+										element: document.querySelector('.collage__items-raw3'),
+										images: imagesLeft3
+									},
+									{
+										element: document.querySelector('.collage__items-raw4'),
+										images: imagesLeft4
+									},
+									{
+										element: document.querySelector('.collage__items-raw5'),
+										images: imagesLeft5
+									},
+									{
+										element: document.querySelector('.collage__items-raw6'),
+										images: imagesRight6
+									},
+									{
+										element: document.querySelector('.collage__items-raw7'),
+										images: imagesRight7
+									},
+									{
+										element: document.querySelector('.collage__items-raw8'),
+										images: imagesRight8
+									},
+									{
+										element: document.querySelector('.collage__items-raw9'),
+										images: imagesRight9
 									},
 								],
 								canvasBG: 'collage/img/bg3.jpg',

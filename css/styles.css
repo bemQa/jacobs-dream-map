@@ -2873,7 +2873,9 @@ table td:nth-child(3) {
 }
 
 @media (max-width: 1280px) {
-    
+    .collage__items img[data-id] {
+        transform: scale(.9);
+    }
 }
 
 @media (max-width: 1000px) {
