@@ -2185,7 +2185,6 @@ header ~ .collage-page {
     transform: scale(1);
 }
 
-
 .table-wrapper {
     max-width: 1160px;
     width: 100%;
@@ -2235,8 +2234,6 @@ table td:nth-child(3) {
    min-width: 140px;
 }
 
-
-
 .iframe-wrap,
 .iframe-wrap iframe {
     scrollbar-width: none;
@@ -2255,6 +2252,128 @@ table td:nth-child(3) {
     max-height: 380px;
     width: 100%;
 }
+
+.winners-title1 {
+    position: relative;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.5));
+    background: linear-gradient(90deg, #B58840 -6.52%, #F2E996 52.31%, #B58840 124.17%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.winners-title2 {
+    position: relative;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 46px;
+    text-align: center;
+    text-transform: uppercase;
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.5));
+    background: linear-gradient(180deg, #FFFFFF 0%, #C2C2C2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.jacobs-svg {
+    margin: 6px 10px 0;
+}
+
+.winners-text-announce0 {
+    position: relative;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 45px;
+    text-align: center;
+    text-transform: uppercase;
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.5));
+    background: linear-gradient(180deg, #FFFFFF 0%, #C2C2C2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 460px;
+    width: 100%;
+    margin: 120px auto 30px;
+}
+
+.winners-date-announce {
+    position: relative;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 10px rgb(0 0 0 / 50%);
+    width: 280px;
+    height: 30px;
+    margin: auto;
+    padding: 6px 10px 9px;
+    background: linear-gradient(100.51deg, #B28D3C 10.08%, #E6C55E 50.03%, #B28D3C 84.55%);
+    border-radius: 5px;
+}
+
+.winners {
+    display: flex;
+    justify-content: center;
+    margin: 35px auto;
+}
+
+.winner {
+    max-width: 230px;
+    width: 100%;
+    margin: 15px;
+}
+
+.winner-img {
+    width: 230px;
+    height: 230px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
+}
+
+.winner-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.winner-city,
+.winner-phone {
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.winners-text-announce1 {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto 15px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
 
 
 .main-page::before {
@@ -2991,7 +3110,6 @@ table td:nth-child(3) {
         margin-bottom: 15px;
     }
 
-
     table th,
     table td {
         padding: 0 10px 10px 0;
@@ -3007,7 +3125,39 @@ table td:nth-child(3) {
         display: table-cell;
     }
 
-    
+    .winners-title1 {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .winners-title2 {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .jacobs-svg {
+        width: 73px;
+        margin: 3px 3px 0;
+    }
+
+    .winners-text-announce0 {
+        font-size: 20px;
+        line-height: 26px;
+        margin: 35px auto 20px;
+    }
+
+    .winners {
+        flex-direction: column;
+        -ms-align-items: center;
+        align-items: center;
+    }
+
+    .winners-text-announce1 {
+        max-width: 270px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
 
     .main-sphere1 {
         top: 205px;
@@ -3141,5 +3291,15 @@ table td:nth-child(3) {
 
     .lk-tab {
         font-size: 10px;
+    }
+
+    .winners-title1,
+    .winners-title2,
+    .winners-title2 + .page-title {
+        font-size: 17px;
+    }
+
+    .jacobs-svg {
+        width: 67px;
     }
 }
