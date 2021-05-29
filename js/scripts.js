@@ -211,6 +211,19 @@ $(document).ready(function () {
         });
     }
 
+    $('.tooltip-link').click(function(e) {
+        e.preventDefault();
+        $(this).next().toggleClass('active');
+
+        $('body').on('click', function (e) {
+            var div = $('.tooltip-link, .tooltip');
+
+            if (!div.is(e.target) && div.has(e.target).length === 0) {
+                div.removeClass('active');
+            }
+        });
+    });
+
     $('.lk-prizes-slider').slick({
         dots: false,
         arrows: true,
