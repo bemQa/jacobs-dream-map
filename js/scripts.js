@@ -52,6 +52,7 @@ $(document).ready(function () {
 
     $('.table-wrapper').scrollbar();
     $('.faq-wrap').scrollbar();
+    $('.dream-text-wrapper').scrollbar();
 
     function maskInit() {
         $(".phone-mask").inputmask({
@@ -224,15 +225,124 @@ $(document).ready(function () {
         });
     });
 
-    $('.lk-prizes-slider').slick({
-        dots: false,
-        arrows: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        swipe: false
-    });
+    if($('#video').length) {
+        var overlay = document.getElementById('overlay');
+        var vid = document.getElementById('video');
+
+        if(overlay.addEventListener) {
+            overlay.addEventListener("click", play, false)
+        } else if(overlay.attachEvent) {
+            overlay.attachEvent("onclick", play)
+        }
+
+        function play() { 
+            if (vid.paused){
+                vid.play(); 
+                overlay.className = "o";
+            }else {
+                vid.pause(); 
+                overlay.className = "";
+            }
+        }
+    }
+
+    if ($('.dreams-slider').length) {
+        var wrap = $('.dreams-slider');
+
+        var swiper = new Swiper(wrap, {
+            // effect: 'fade',
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+        swiper.init();
+
+    }
+
+    if ($('.dreams-maps-slider').length) {
+
+        function swipperInit() {
+            var wrap = $('.dreams-maps-slider');
+
+            var swiper = new Swiper(wrap, {
+                slidesPerView: 2,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+
+                effect: 'coverflow',
+                centeredSlides: true,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 180,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: false
+                },
+
+                loop: true,
+                speed: 400,
+                observer: true,
+                observeParents: true,
+
+                preloadImages: false,
+                lazy: {
+                    loadPrevNext: true,
+                    loadPrevNextAmount: 3
+                },
+                breakpoints: {
+                    1000: {
+                        slidesPerView: 1,
+                        effect: 'auto'
+                    }
+                }
+            });
+            swiper.init();
+        }
+
+        function swipperInitEdge() {
+            var wrap = $('.dreams-maps-slider');
+
+            new Swiper(wrap, {
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+
+                centeredSlides: true,
+
+                loop: true,
+                speed: 400,
+                observer: true,
+                observeParents: true,
+
+                preloadImages: false,
+                lazy: {
+                    loadPrevNext: true,
+                    loadPrevNextAmount: 3
+                }
+            });
+        }
+        if (/Edge/.test(navigator.userAgent)) {
+            swipperInitEdge();
+        } else {
+            swipperInit();
+        }
+
+    }
 
     function test() {
         let question_number = $('.test-question-wrapper.active').data('question');
