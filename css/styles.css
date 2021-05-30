@@ -2585,9 +2585,13 @@ table td:nth-child(3) {
     margin: 15px 10px;
 }
 
+.main-block {
+    position: relative;
+}
+
 .kv {
     position: absolute;
-    top: 0;
+    top: -170px;
     left: 0;
     right: -450px;
     margin: auto;
@@ -2608,6 +2612,7 @@ table td:nth-child(3) {
     display: flex;
     -ms-align-items: center;
     align-items: center;
+    justify-content: center;
     font-weight: 500;
     font-size: 18px;
     line-height: 1;
@@ -3000,10 +3005,23 @@ table td:nth-child(3) {
     z-index: 0;
 }
 
+.dream-maps-decor {
+    position: absolute;
+    top: -270px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1050px;
+    background: url(../img/dream-maps-decor.png) center no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
 .dreams-maps-slider {
     max-width: 1280px;
     width: 100%;
-    margin: 0 auto 50px;
+    margin: 0 auto;
 }
 
 .dreams-maps-slide {
@@ -3748,13 +3766,52 @@ table td:nth-child(3) {
         margin: 6px 5px;
     }
 
+    .kv {
+        top: -180px;
+        left: -500px;
+        right: -500px;
+        width: 611px;
+        height: 611px;
+        background: url(../img/kv-mob.png) center no-repeat;
+        background-size: contain;
+    }
 
-    .steps-block {
-        max-width: 320px;
-        padding-top: 600px;
+    .kv-info {
+        margin-top: 0;
+        padding-top: 260px;
+    }
+
+    .kv-date {
+        margin: 0 auto 10px;
+    }
+
+    .kv-title1 {
+        font-size: 44px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .kv-title2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .kv-title3 {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .kv-text {
+        text-align: center;
+    }
+
+    .kv-text + .btn-wrapper {
+        justify-content: center;
     }
 
     .steps {
+        position: relative;
         flex-direction: column;
         -ms-align-items: center;
         align-items: center;
@@ -3763,7 +3820,193 @@ table td:nth-child(3) {
     }
 
     .step:not(:last-child) {
-        margin-bottom: 24px;
+        margin-bottom: 30px;
+    }
+
+    .main-decor {
+        position: absolute;
+        top: 615px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 768px;
+        width: 100%;
+        height: 1380px;
+        background: url(../img/main-decor-mob.png) center 0 no-repeat;
+        background-size: cover;
+        z-index: 0;
+    }
+
+    .main-prize-block {
+        min-height: 320px;
+    }
+
+    .main-prize {
+        top: -15px;
+        left: -125px;
+        right: -100px;
+        width: 426px;
+        height: 311px;
+        background: url(../img/main-prize-mob.png) center 0 no-repeat;
+        background-size: contain;
+    }
+
+    #overlay {
+        background-size: 36px;
+    }
+
+    .dream-block {
+        margin-top: 10px;
+    }
+
+    .dreams-text {
+        max-width: 290px;
+        font-size: 12px;
+        line-height: 21px;
+    }
+
+    .dreams-text img {
+        width: 46px;
+        margin-bottom: -1px;
+    }
+
+    .dreams-slider {
+        max-width: 100%;
+        margin: 0 auto 15px;
+    }
+
+    .dreams-slide {
+        max-width: 300px;
+        margin: 80px auto 40px;
+        padding: 90px 15px 30px;
+        box-shadow: 0px 0px 25px rgb(0 0 0 / 35%);
+    }
+
+    .dreams-slide::before {
+        top: auto;
+        left: 0;
+        width: 100%;
+        background: url(../img/dreams-slide-bg-mob.png) center bottom no-repeat;
+        background-size: 371px;
+    }
+
+    .dreamer-name {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .dream-title {
+        height: 150px;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .dream-text-wrapper {
+        max-width: 260px;
+        max-height: 320px;
+    }
+
+    .dream-text {
+        max-width: 230px;
+    }
+
+    .dreamer-img {
+        top: -34px;
+        left: 0;
+        bottom: auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    .dreamer-img img {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+    }
+
+    .dreams-slider .swiper-button-prev {
+        top: 105px;
+        left: -260px;
+        right: 0;
+        margin: auto;
+        width: 13px;
+        height: 33px;
+        background: url(../img/arrow-left-gold-mob.svg) center no-repeat;
+        background-size: contain;
+    }
+
+    .dreams-slider .swiper-button-next {
+        top: 105px;
+        left: 0;
+        right: -260px;
+        margin: auto;
+        width: 13px;
+        height: 33px;
+        background: url(../img/arrow-right-gold-mob.svg) center no-repeat;
+        background-size: contain;
+    }
+
+    .dreams-more {
+        max-width: 300px;
+    }
+
+    .dreams-more::before {
+        top: 75px;
+        width: 300px;
+        height: 147px;
+        background: url(../img/dream-more-border-mob.png) center no-repeat; 
+        background-size: contain;
+    }
+
+    .dreams-more-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .dreams-more-text {
+        font-size: 12px;
+        max-width: 260px;
+        margin: 0 auto 60px;
+    }
+
+    .dreams-maps-block {
+        padding: 60px 0;
+    }
+
+    .dreams-maps-block::before {
+        min-width: 528px;
+        background: url(../img/dream-maps-bg-mob.png) center no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .dreams-maps-slide {
+        filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25));
+    }
+
+    .dream-map-img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .dream-map-dreamer {
+        font-size: 12px;
+    }
+
+    .dreams-maps-slider .swiper-button-prev {
+        top: 45%;
+        width: 13px;
+        height: 33px;
+        background: url(../img/arrow-left-green-mob.svg) center no-repeat;
+        background-size: contain;
+    }
+
+    .dreams-maps-slider .swiper-button-next {
+        top: 45%;
+        width: 13px;
+        height: 33px;
+        background: url(../img/arrow-right-green-mob.svg) center no-repeat;
+        background-size: contain;
     }
 
     .error-page {
@@ -3844,5 +4087,18 @@ table td:nth-child(3) {
 
     .shop {
         width: 135px;
+    }
+
+    .kv-title1 {
+        font-size: 40px;
+    }
+
+    .kv-title2,
+    .kv-title3 {
+        font-size: 18px;
+    }
+
+    .main-prize {
+        width: 388px;
     }
 }
