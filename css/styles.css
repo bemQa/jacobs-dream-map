@@ -2611,7 +2611,7 @@ table td:nth-child(3) {
 .products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 940px;
     width: 100%;
     margin: 50px auto 0;
@@ -2620,7 +2620,7 @@ table td:nth-child(3) {
 .product {
     max-width: 262px;
     width: 100%;
-    margin: 30px auto;
+    margin: 30px 20px;
 }
 
 .product-img {
@@ -4066,6 +4066,10 @@ table td:nth-child(3) {
         justify-content: center;
         max-width: 300px;
         margin-top: 40px;
+    }
+
+    .product {
+        margin: 30px auto;
     }
     
     .where-buy-block {
