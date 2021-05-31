@@ -4364,7 +4364,7 @@ table td:nth-child(3) {
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     .logo {
         max-width: 120px;
     }
