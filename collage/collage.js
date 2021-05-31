@@ -80,7 +80,6 @@ function rem(valueInPx) {
 	if (window.innerWidth <= 1000) {
 		k = 376
 	}
-	console.log(k, 'k');
 	let rem = (window.innerWidth / k) * valueInPx
 
 	return rem;
@@ -136,23 +135,33 @@ function collage(settings, callback) {
 				});
 
 				const textName = new Konva.Text({
-					text: settings.textName || '',
+					text: settings.textName.toUpperCase() || '',
 					x: 0,
-					// y: rem(90),
+					y: rem(92),
 					fontSize: rem(14), // lnh 21px
 					fontFamily: 'Gotham Pro',
+					shadowBlur: 10,
+					shadowOffset: { x: 0, y: 4 },
+					shadowOpacity: 0.5,
 					fill: 'white',
 					// rotation : -4.2,
 				})
 
-				
-				textName.x(rem(55 + (210 / 2 - (textName.width() / 2))));
+				// rem(55 + (210 / 2 - (textName.width() / 2)))
+				textName.x(rem(58) + (rem(210) / 2) - (textName.width() / 2));
 
-				textName.offsetX(textName.width() / 2);
-				textName.offsetY(textName.height() / 2);
-				textName.x(textName.x() + textName.width() / 2);
-				textName.y(textName.y() + textName.height() / 2);
-				textName.y(rem(98))
+				if(settings.isMobile){
+					textName.fontSize(rem(10))
+					textName.y(rem(62)); 
+					textName.x(rem(40) + rem(140 / 2) - (textName.width() / 2));
+				}
+
+				// textName.offsetX(textName.width() / 2);
+				// textName.offsetY(textName.height() / 2);
+				// textName.x(textName.x() + textName.width() / 2);
+				// textName.y(textName.y() + textName.height() / 2);
+
+				// textName.y(rem(98))
 				textName.rotation(-4.2)
 				
 				misc.add(bgImg);
