@@ -2252,6 +2252,10 @@ header ~ .collage-page {
     line-height: 16px;
     text-align: center;
     color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 230px;
 }
 
 .my-map-soc-input {
